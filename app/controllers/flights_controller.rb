@@ -6,6 +6,7 @@ class FlightsController < ApplicationController
   def index
     @airports=Airport.all.map{|a| [a.code, a.id]}
     @dates=get_dates
+    @passengers=params[:passengers]
     @query=params[:query]
     if @query
       @flights=Flight.where(from_airport_id: params[:from], 

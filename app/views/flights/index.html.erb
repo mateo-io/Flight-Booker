@@ -33,17 +33,23 @@
 
 <% elsif @flights %>
 
-<table class="table" id="flightIndex">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Flight #</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-  <%= render @flights%>
-  </tbody>
-</table>
+<%= form_tag(controller: :bookings, action: :new, method: :get)%>
+  <table class="table" id="flightIndex">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Select</th>
+        <th>Flight #</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render @flights%>
+    </tbody>
+  </table>
+<%= hidden_field_tag(:passengers,@passengers )%>
+<%= submit_tag("Book", class:"btn btn-lg")%>
 <% end %>
+
+

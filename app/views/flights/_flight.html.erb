@@ -1,6 +1,8 @@
 <tr class="flight">
-  <th scope="row"><%=flight.id%>0</th> 
+  <th scope="row"><%= radio_button_tag(:id,flight.id) %></th> 
+  <td><%=flight.id%>0</td>
   <td><%= Airport.find_by_id(flight.from_airport_id).code %></td>
   <td><%= Airport.find_by_id(flight.to_airport_id).code %></td>
+ 
   <td> ~<%= (flight.duration/60.0).round %> Hours</td>
 </tr>
