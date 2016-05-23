@@ -1,0 +1,49 @@
+<div class="jumbotron center">
+  <h1 class="center"> Flight-Booker</h1>
+</div>
+
+
+<form class="form-inline">
+<%= form_tag("/flights", method: :get) do %>
+  <%= label_tag(:from, "From:")%>
+  <%= select_tag(:from, options_for_select(@airports), class: "form-control") %>
+  
+  <%= label_tag(:to, "To:")%>
+  <%= select_tag(:to, options_for_select(@airports), class: "form-control") %>
+
+  <%= label_tag(:passengers, "Passengers:")%>
+  <%= select_tag(:passengers,options_for_select([[1,1],[2,2],[3,3],[4,4]]),
+                 class: "form-control") %>
+
+  <%= label_tag(:date, "Date:")%>
+  <%= select_tag(:date, options_for_select(@dates),
+                 class: "form-control") %>
+
+  <%= hidden_field_tag(:query, true) %>
+  <%= submit_tag("Search", class: "btn btn-primary") %> 
+
+<% end %>
+</form>
+
+<% if @query && @flights.empty? %>
+  <div class="card card-inverse card-danger text-xs-center">
+    <p>No flights were found.</p>
+    <p>Please search again</p>
+  </div>
+
+<% elsif @flights %>
+
+<table class="table" id="flightIndex">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Flight #</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= render @flights%>
+  </tbody>
+</table>
+<% end %>
