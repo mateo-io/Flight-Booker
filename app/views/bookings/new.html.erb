@@ -20,7 +20,20 @@
 </table>
 <%= form_for @booking do |f| %>
 
-  <p>Nested from to add passengers</p>
+  <%= f.hidden_field(:passengers_number,value: @passengers) %>
+  <%= f.hidden_field(:flight_id,value: @flight.id) %>
+  <%  @passengers.times do |count| %>
+    <h2>Passenger <%=count+1%></h2>
+  <%= f.fields_for :passengers do |form| %>
+    
+ 
+    <%= form.label(:name) %>
+    <%= form.text_field(:name, class:"form-control") %>
+
+    <%= form.label(:email) %>
+    <%= form.text_field(:email, class:"form-control") %>
+  <% end %>
+<% end %>
  <%= f.submit("Submit", class:"btn") %>
 
 <% end %>

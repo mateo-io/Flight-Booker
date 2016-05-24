@@ -24,7 +24,7 @@
 
 <% end %>
 </form>
-
+<div class="flightIndex">
 <% if @query && @flights.empty? %>
   <div class="card card-inverse card-danger text-xs-center">
     <p>No flights were found.</p>
@@ -34,7 +34,7 @@
 <% elsif @flights %>
 
 <%= form_tag("/bookings/new", method: :get)%>
-  <table class="table" id="flightIndex">
+  <table class="table" >
     <thead class="thead-inverse">
       <tr>
         <th>Select</th>
@@ -52,4 +52,4 @@
 <%= submit_tag("Book", class:"btn btn-lg")%>
 <% end %>
 
-
+</div>
