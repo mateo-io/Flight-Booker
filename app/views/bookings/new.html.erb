@@ -1,2 +1,27 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="jumbotron"> 
+  <h1>Bookings</h1>
+</div>
+
+<table class="table table-inverse">
+
+  <tr>
+    <th>Flight Number</th>
+    <th>Date</th>
+    <th>Departing</th>
+    <th>Arriving</th>
+  </tr>
+
+  <tr>
+    <td><%= @flight.id%>0</td>
+    <td><%= @flight.start%></td>
+    <td><%= @from%></td>
+    <td><%= @to%></td>
+  </tr>
+</table>
+<%= form_for @booking do |f| %>
+
+  <p>Nested from to add passengers</p>
+ <%= f.submit("Submit", class:"btn") %>
+
+<% end %>
+

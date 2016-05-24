@@ -33,7 +33,7 @@
 
 <% elsif @flights %>
 
-<%= form_tag(controller: :bookings, action: :new, method: :get)%>
+<%= form_tag("/bookings/new", method: :get)%>
   <table class="table" id="flightIndex">
     <thead class="thead-inverse">
       <tr>
