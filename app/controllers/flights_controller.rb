@@ -5,13 +5,15 @@ class FlightsController < ApplicationController
 
   def index
     @airports=Airport.all.map{|a| [a.code, a.id]}
-    @dates=get_dates
+    @dates=Flight.get_dates
     @passengers=params[:passengers]
     @query=params[:query]
+
     if @query
+      date=params[:date].to_date
       @flights=Flight.where(from_airport_id: params[:from], 
                         to_airport_id: params[:to],
-                        start: Date.strptime(params[:date],'%d%m%Y').to_datetime)
+                 start: date.beginning_of_day..date.end_of_day)
     end
   end
 end

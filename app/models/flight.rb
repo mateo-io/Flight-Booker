@@ -3,7 +3,8 @@ class Flight < ActiveRecord::Base
   belongs_to :to_airport, class_name: "Airport"
   has_many :bookings
 
-  def flight_date_formatted
-    start.strftime("%d/%m/%Y")
+ 
+  def self.get_dates
+    pluck(:start).map{|d| [d.strftime("%d/%m/%Y"), d.to_date] }.uniq 
   end
 end

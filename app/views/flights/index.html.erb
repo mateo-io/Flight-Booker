@@ -12,7 +12,7 @@
   <%= select_tag(:to, options_for_select(@airports), class: "form-control") %>
 
   <%= label_tag(:passengers, "Passengers:")%>
-  <%= select_tag(:passengers,options_for_select([[1,1],[2,2],[3,3],[4,4]]),
+  <%= select_tag(:passengers,options_for_select(1.upto(4).map{|e| [e,e]}),
                  class: "form-control") %>
 
   <%= label_tag(:date, "Date:")%>
