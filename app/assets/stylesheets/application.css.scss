@@ -1,12 +1,58 @@
 @import "bootstrap";
 
+.header{
+  background-color: black;
+  text-align: center;
+  height: 12em;
+  margin-bottom: 0;
+  color: white;
+}
+
+
 div{
     color: black;
 }
 
-h1{
-  text-align: center;
+.black{
+  background-color: black;
 }
+
+h1 { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
+h2 { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 25px; font-weight: 300; line-height: 58px;  }
+
+
+
+p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
+
+
+a { color: #fe921f; }
+
+
+a:hover { color: gray; text-decoration: none;}
+
+
+.navitem{
+
+  display: inline;
+}
+
+.booking{
+
+  margin-top: 0em;
+  padding-top: 2em;
+  height: 8em;
+}
+
+.navbar{
+  font-size: 1.5em;
+  padding-top: 0.5em;
+  margin-bottom: 2em;
+  text-align: center;
+  border: 2px solid black;
+
+}
+
+.date { background: #fe921f; color: #ffffff; display: inline-block; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: bold; line-height: 12px; letter-spacing: 1px; margin: 0 0 30px; padding: 10px 15px 8px; text-transform: uppercase; }
 
 .flight{
   margin: 20px;
@@ -22,4 +68,20 @@ h1{
 
 .form-control{
   margin-right: 1em;
+  margin-bottom: 1em;
 }
+
+.passenger{
+
+  padding-bottom: 0.5em;
+  padding-left: 0.8em;
+  margin: 2em;
+  border: 1px solid;
+  border-color: white;
+}
+
+.center{
+
+  text-align: center;
+}
+

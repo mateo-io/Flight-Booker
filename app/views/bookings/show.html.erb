@@ -1,17 +1,19 @@
-<div class="jumbotron">
+<div class="jumbotron black">
 
-  <span><strong>Booking Id </strong><%=@booking.id%>0</span>
-  <span><strong>Flight Id </strong><%= @booking.flight_id%>0</span>
-  <span>From: <%=@from%>     To: <%=@to%></span>
-  <span>Date: <%=@flight.start.to_date%></span>
+  <h1 class="center">Booking Id: <%=@booking.id%>0</h1>
+  <p><strong>Flight id: </strong><%= @booking.flight_id%>0</p>
+  <p><strong>From: </strong><%=@from%>     To: <%=@to%></p>
+  <p><strong>Date:</strong> <%=@flight.start.to_date%></p>
 
-  <span><strong>Passenger Information </strong></span>
+  <h2 class="center"><strong>Passenger Information </strong></h2>
   <% @booking.passengers.each_with_index do |passenger, index| %>
+    <div class="passenger"> 
     <h2>Passenger <%= index+1%></h2>
 
 
-    <span>Name: <%=passenger.name%></span>
-    <span>email: <%=passenger.email%></span>
+    <p><strong>Name: </strong><%=passenger.name%></p>
+    <p><strong>Email: </strong><%=passenger.email%></p>
+    </div>
   <% end %>
 
 
