@@ -1,4 +1,12 @@
-####Flight Booker
+####Flight Booker Clone 
+
+[Click here to open it! (Heroku)](https://flight-clone.herokuapp.com/)
+
+Complete Model Relationship between Airports-Flight-Date and User wanting to make a Booking. 
+
+Working prototype
+
+####Credit
 
 This is an assignment of The Odin Project Rails course
 
